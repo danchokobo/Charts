@@ -86,7 +86,7 @@ open class ChartViewBase: NSUIView, ChartDataProvider, AnimatorDelegate
     @objc open var noDataFont: NSUIFont! = NSUIFont(name: "HelveticaNeue", size: 12.0)
     
     /// color of the no data text
-    @objc open var noDataTextColor: NSUIColor = NSUIColor.black
+    @objc open var noDataTextColor: NSUIColor = NSUIColor.red
 
     /// alignment of the no data text
     open var noDataTextAlignment: NSTextAlignment = .left
@@ -367,12 +367,6 @@ open class ChartViewBase: NSUIView, ChartDataProvider, AnimatorDelegate
             attributes: attrs)
     }
     
-    // MARK: - Accessibility
-
-    open override func accessibilityChildren() -> [Any]? {
-        return renderer?.accessibleChartElements
-    }
-
     // MARK: - Highlighting
     
     /// - returns: The array of currently highlighted values. This might an empty if nothing is highlighted.
